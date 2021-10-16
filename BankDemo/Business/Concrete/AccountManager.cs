@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -11,39 +12,44 @@ namespace Business.Concrete
 {
     public class AccountManager : IAccountService
     {
+        IAccountDal _accountDal;
+        public AccountManager(IAccountDal accountDal)
+        {
+            _accountDal = accountDal;
+        }
         public int Add(Account entity)
         {
-            throw new NotImplementedException();
+            return _accountDal.Add(entity);
         }
 
         public bool AddMoney(decimal amount, Account account)
         {
-            throw new NotImplementedException();
+            return _accountDal.AddMoney(amount,account);
         }
 
         public int Delete(Account entity)
         {
-            throw new NotImplementedException();
+            return _accountDal.Delete(entity);
         }
 
         public Account Get(Expression<Func<Account, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _accountDal.Get(filter);
         }
 
         public List<Account> GetAll(Expression<Func<Account, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _accountDal.GetAll(filter);
         }
 
         public bool TakeMoney(decimal amount, Account account)
         {
-            throw new NotImplementedException();
+            return _accountDal.TakeMoney(amount,account);
         }
 
         public int Update(Account entity)
         {
-            throw new NotImplementedException();
+            return _accountDal.Update(entity);
         }
     }
 }

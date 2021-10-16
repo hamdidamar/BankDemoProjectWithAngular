@@ -12,7 +12,7 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=HAMDIDAMAR\HAMDIDAMAR;Database=CoreCamp;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=HAMDIDAMAR\HAMDIDAMAR;Database=BankDemo;Trusted_Connection=true");
         }
 
         public DbSet<Account> Accounts { get; set; }

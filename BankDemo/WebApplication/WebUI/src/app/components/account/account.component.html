@@ -1,0 +1,22 @@
+<div class="col-xs-12 col-sm-6 col-md-4 books-list" style="margin-top: 50px;">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Total</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.accountId }}</td>
+        <td>{{ item.accountName }}</td>
+        <td>{{ item.total }}</td>
+        <td><button class="btn btn-primary">Add Money</button></td>
+        <td><button class="btn btn-secondary">Take Money</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

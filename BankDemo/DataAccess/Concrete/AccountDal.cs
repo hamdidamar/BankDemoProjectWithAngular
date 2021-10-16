@@ -12,12 +12,26 @@ namespace DataAccess.Concrete
     {
         public bool AddMoney(decimal amount, Account account)
         {
-            throw new NotImplementedException();
+            using (Context context = new Context())
+            {
+                var updateAccount = context.Accounts.SingleOrDefault(a => a.AccountId == account.AccountId);
+                updateAccount.Total += amount;
+                var res = context.SaveChanges();
+                return res == 1 ? true : false;
+
+            }
         }
 
         public bool TakeMoney(decimal amount, Account account)
         {
-            throw new NotImplementedException();
+            using (Context context = new Context())
+            {
+                var updateAccount = context.Accounts.SingleOrDefault(a => a.AccountId == account.AccountId);
+                updateAccount.Total -= amount;
+                var res = context.SaveChanges();
+                return res == 1 ? true : false;
+
+            }
         }
     }
 }
