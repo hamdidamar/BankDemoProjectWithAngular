@@ -10,6 +10,8 @@ import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddMoneyDialogComponent } from './components/account/add-money-dialog/add-money-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     AccountComponent,
-    HomeComponent
+    HomeComponent,
+    AddMoneyDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
