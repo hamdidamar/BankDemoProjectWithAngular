@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddMoneyDialogComponent } from './components/account/add-money-dialog/add-money-dialog.component';
+import { FormsModule } from '@angular/forms';
+import { TakeMoneyDialogComponent } from './components/account/take-money-dialog/take-money-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { AddMoneyDialogComponent } from './components/account/add-money-dialog/a
     RegisterComponent,
     AccountComponent,
     HomeComponent,
-    AddMoneyDialogComponent
+    AddMoneyDialogComponent,
+    TakeMoneyDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

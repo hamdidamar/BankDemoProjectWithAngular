@@ -14,8 +14,8 @@
         <td>{{ item.accountId }}</td>
         <td>{{ item.accountName }}</td>
         <td>{{ item.total }}</td>
-        <td><button class="btn btn-primary">Add Money</button></td>
-        <td><button class="btn btn-secondary">Take Money</button></td>
+        <td><button class="btn btn-primary" (click)="addMoney(item)">Add Money</button></td>
+        <td><button class="btn btn-secondary" (click)="takeMoney(item)">Take Money</button></td>
       </tr>
     </tbody>
   </table>

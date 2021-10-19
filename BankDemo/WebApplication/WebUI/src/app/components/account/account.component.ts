@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { AccountService } from 'src/app/services/account/account.service'
 
 @Component({
@@ -7,7 +8,7 @@ import { AccountService } from 'src/app/services/account/account.service'
   styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent implements OnInit {
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService,private router:Router) {}
 
   items: any
   ngOnInit(): void {
@@ -16,4 +17,14 @@ export class AccountComponent implements OnInit {
       this.items = data
     })
   }
+
+  addMoney(item:any){
+    this.router.navigate(['addMoney',JSON.stringify(item)])
+  }
+
+  takeMoney(item:any){
+    this.router.navigate(['takeMoney',JSON.stringify(item)])
+  }
 }
+
+

@@ -32,7 +32,11 @@ namespace API
                 options.AddPolicy(name: allowOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins("*");
+                                      builder.WithOrigins("*",
+                                    "http://localhost:4200"
+                                    )
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
                                   });
             });
 
